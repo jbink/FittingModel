@@ -5,58 +5,112 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar_title1"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/web_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/title_bg_color">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/web_toolbar"
+        <RelativeLayout
+            android:id="@+id/web_title"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/title_bg_color">
+            android:background="@color/title_bg_color"
+            android:orientation="horizontal">
+
 
             <RelativeLayout
-                android:id="@+id/web_title"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/title_bg_color"
-                android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center">
 
-
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/main_title_img_dain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:id="@+id/main_title_img_dain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:textSize="20dp"
-                        android:textColor="@color/white"
-                        android:text="회원가입 안내"/>
-
-
-                </RelativeLayout>
-
-
+                    android:text="회원가입 안내"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
             </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
 
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/main_back">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="70dp"
+                android:text="I'M A \n MODEL"
+                android:textColor="@color/white"
+                android:textSize="40dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="피팅모델, 주부모델, 부분모델, 어린이 청소년모델,
+외국인모델등 온라인쇼핑몰과 모델을 편리하고 안전하게
+매칭해주는 구인구직 앱서비스 입니다. "
+                android:textColor="@color/white" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_login"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="쇼핑몰(사업주)가입"
+                android:textColor="@color/white"
+                android:background="@drawable/sel_btn_signup" />
+            
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="#55504a"/>
+            
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="모델(구직자)가입"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_signup" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
