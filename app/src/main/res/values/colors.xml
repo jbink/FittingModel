@@ -10,6 +10,15 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="transparent">#a0000000</color>
+    <color name="default_background">#ededed</color>
+    <color name="color_7131ad">#7131ad</color>
+    <color name="color_7b7b7b">#7b7b7b</color>
+    <color name="color_302c29">#302c29</color>
+    <color name="color_d5d5d5">#d5d5d5</color>
+    <color name="color_select">#bba3d1</color>
+
+
+
 
 
 </resources>

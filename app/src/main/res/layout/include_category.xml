@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 유아동 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_child_0"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="유아동 쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_child_0"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_child_ibtn_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSubMenuClick"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_child_txt_0"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:enabled="true"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_child_ibtn_1"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_child_txt_1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_child_ibtn_2"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_child_txt_2"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+    <!-- 남성 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_man_1"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="남성의류 쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_man_1"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_man_ibtn_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_man_txt_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_man_ibtn_1"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_man_txt_1"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_height="wrap_content"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_man_ibtn_2"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_man_txt_2"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+    <!-- 여성 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_woman_2"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="여성의류 쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_woman_2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_woman_ibtn_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_woman_txt_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_woman_ibtn_1"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_woman_txt_1"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_woman_ibtn_2"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_woman_txt_2"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+    <!-- 미시, 주부쇼핑몰 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_mrs_3"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="미시, 주부쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_mrs_3"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_mrs_ibtn_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_mrs_txt_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_mrs_ibtn_1"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_mrs_txt_1"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_mrs_ibtn_2"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_mrs_txt_2"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+    <!-- 테마쇼핑몰 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_theme_4"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="테마쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_theme_4"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_theme_ibtn_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_theme_txt_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_theme_ibtn_1"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_theme_txt_1"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_theme_ibtn_2"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_theme_txt_2"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+    <!-- 스포츠쇼핑몰 -->
+    <RelativeLayout
+        android:id="@+id/category_sel_sport_5"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="스포츠 쇼핑몰"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/category_txt_arrow_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_layout_sport_5"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_sport_ibtn_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category_on"/>
+        <TextView
+            android:id="@+id/category_sport_txt_0"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7131ad"
+            android:text="캐주얼"/>
+        <ImageButton
+            android:id="@+id/category_sport_ibtn_1"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_sport_txt_1"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="정장"/>
+        <ImageButton
+            android:id="@+id/category_sport_ibtn_2"
+            android:onClick="onClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_sport_txt_2"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="란제리"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

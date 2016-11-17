@@ -14,6 +14,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo.State;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.text.format.DateFormat;
@@ -22,6 +23,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.Window;
 import android.view.WindowManager;
 
 import java.io.UnsupportedEncodingException;
@@ -37,17 +39,14 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class GlobalValues {
-	
+import jbink.appnapps.fittingmodel.R;
 
-	public final static String SERVER_URL = "http://www.eapkorea.co.kr";
-	public final static String PROJECT_ID = "1011927066387";
-	
+public class GlobalValues {
+
 	public final static int WIFI = 0;	
 	public final static int LTE_3G = 1;
 	
 	static Typeface mFont = null;
-	
 	/**
 	 * @param context
 	 * @return Typeface 폰트
@@ -56,14 +55,22 @@ public class GlobalValues {
 		if(mFont == null)
 			mFont = Typeface.createFromAsset(context.getAssets(), "fonts/NanumBarunGothic.ttf");
 		return mFont;
-		
-		
-//		Typeface font = Typeface.DEFAULT;
-//		Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/BareunDotum2.ttf");
-//		Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSansKr-Medium.ttf");
-//		return font;
 	}
-	
+
+	static Typeface mBoldFont = null;
+	public static Typeface getBoldFont(Context context){
+		if(mBoldFont == null)
+			mBoldFont = Typeface.createFromAsset(context.getAssets(), "fonts/NanumBarunGothicBold.ttf");
+		return mBoldFont;
+	}
+
+	static Typeface mLightFont = null;
+	public static Typeface getLightFont(Context context){
+		if(mLightFont == null)
+			mLightFont = Typeface.createFromAsset(context.getAssets(), "fonts/NanumBarunGothicLight.ttf");
+		return mLightFont;
+	}
+
 	/**
 	 *  email
 	 *  true :이메일 형식
@@ -505,6 +512,15 @@ public class GlobalValues {
 			case Calendar.FRIDAY : return"금요일";
 			case Calendar.SATURDAY : return"토요일";
 			default: return "X";
+		}
+	}
+
+	public static void setStatusBarColor(Activity activity, int color) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			Window window = activity.getWindow();
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			window.setStatusBarColor(ContextCompat.getColor(activity, R.color.colorPrimary));
 		}
 	}
 }
