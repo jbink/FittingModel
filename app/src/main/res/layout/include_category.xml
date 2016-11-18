@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="유아동 쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_0"
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="남성의류 쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_1"
@@ -181,7 +181,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="여성의류 쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_2"
@@ -261,7 +261,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="미시, 주부쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_3"
@@ -341,7 +341,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="테마쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_4"
@@ -421,7 +421,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_rect_e1"
             android:hint="스포츠 쇼핑몰"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/category_txt_arrow_5"

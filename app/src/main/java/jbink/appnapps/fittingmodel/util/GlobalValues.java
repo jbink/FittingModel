@@ -45,7 +45,9 @@ public class GlobalValues {
 
 	public final static int WIFI = 0;	
 	public final static int LTE_3G = 1;
-	
+	public final static int POPUP_RESULT = 1414;
+	public final static int POPUP_REQUEST = 1515;
+
 	static Typeface mFont = null;
 	/**
 	 * @param context

@@ -55,6 +55,8 @@ public class MallSignup2Activity extends AppCompatActivity {
 
     public void onClick(View v){
         switch (v.getId()){
+            case R.id.mall_signup_2_tv_auth_num :
+                break;
             case R.id.category_sel_child_0 :
                 setLayoutVisible(0);
                 break;
