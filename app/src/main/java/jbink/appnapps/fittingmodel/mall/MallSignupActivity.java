@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +24,7 @@ import jbink.appnapps.fittingmodel.R;
 import jbink.appnapps.fittingmodel.util.CustomDialog;
 import jbink.appnapps.fittingmodel.util.CustomPopup;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
+import jbink.appnapps.fittingmodel.util.SharedPreUtil;
 
 /**
  * Created by user on 2016-11-16.
@@ -29,9 +32,9 @@ import jbink.appnapps.fittingmodel.util.GlobalValues;
 public class MallSignupActivity extends AppCompatActivity {
     Context mContext;
 
-    EditText mEditShopName;
+    EditText mEditShopName, mEditName, mEditAddress, mEditAddressSub;
     TextView mTvShopBuisness;
-    EditText[] mEditShopNumber;
+    EditText[] mEditBusinessNumber;
 
     boolean mBoolAuth = false;
 
@@ -57,16 +60,29 @@ public class MallSignupActivity extends AppCompatActivity {
 
         mEditShopName = (EditText)findViewById(R.id.mall_signup_shop_name);
         mEditShopName.setTypeface(GlobalValues.getFont(mContext));
+        mEditName = (EditText)findViewById(R.id.mall_signup_edt_name);
+        mEditName.setTypeface(GlobalValues.getFont(mContext));
+        mEditAddress = (EditText)findViewById(R.id.mall_signup_edt_address);
+        mEditAddress.setTypeface(GlobalValues.getFont(mContext));
+        mEditAddressSub = (EditText)findViewById(R.id.mall_signup_edt_address_sub);
+        mEditAddressSub.setTypeface(GlobalValues.getFont(mContext));
         mTvShopBuisness = (TextView) findViewById(R.id.mall_signup_txt_business);
         mTvShopBuisness.setTypeface(GlobalValues.getFont(mContext));
-        mEditShopNumber = new EditText[]{
+        mEditBusinessNumber = new EditText[]{
                 (EditText)findViewById(R.id.mall_signup_shop_number_0),
                 (EditText)findViewById(R.id.mall_signup_shop_number_1),
                 (EditText)findViewById(R.id.mall_signup_shop_number_2)
         };
-        for(int i=0 ; i<mEditShopNumber.length ; i++) {
-            mEditShopNumber[i].setTypeface(GlobalValues.getFont(mContext));
+        for(int i=0 ; i<mEditBusinessNumber.length ; i++) {
+            mEditBusinessNumber[i].setTypeface(GlobalValues.getFont(mContext));
         }
+
+        ((TextView) findViewById(R.id.mall_signup_txt_0)).setTypeface(GlobalValues.getFont(mContext));
+        ((TextView) findViewById(R.id.mall_signup_txt_1)).setTypeface(GlobalValues.getFont(mContext));
+        ((TextView) findViewById(R.id.mall_signup_txt_2)).setTypeface(GlobalValues.getFont(mContext));
+        ((TextView) findViewById(R.id.mall_signup_txt_3)).setTypeface(GlobalValues.getFont(mContext));
+        ((TextView) findViewById(R.id.mall_signup_txt_4)).setTypeface(GlobalValues.getFont(mContext));
+        ((TextView) findViewById(R.id.mall_signup_txt_5)).setTypeface(GlobalValues.getFont(mContext));
     }
 
 
@@ -83,23 +99,51 @@ public class MallSignupActivity extends AppCompatActivity {
                 intent1.putStringArrayListExtra("datas", dd);
                 startActivityForResult(intent1, GlobalValues.POPUP_REQUEST);
                 break;
-            case R.id.mall_signup_tv_auth :
-                for(int i=0 ; i<mEditShopNumber.length ; i++){
-                    if(TextUtils.isEmpty(mEditShopNumber[i].getText().toString())){
+            case R.id.mall_signup_btn_auth :
+                for(int i=0 ; i<mEditBusinessNumber.length ; i++){
+                    if(TextUtils.isEmpty(mEditBusinessNumber[i].getText().toString())){
                         Toast.makeText(mContext, "사업자 번호를 입력하세요", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
-                notiDialog("성공", "인증 되었습니다.");
+
+                authHandler.sendEmptyMessageDelayed(0, 500);
 
                 break;
             case R.id.mall_signup_btn_next :
-                Intent intent = new Intent(mContext, MallSignup2Activity.class);
-                startActivity(intent);
+                if(emptyEdittext(mEditShopName.getText().toString())
+                    ||emptyEdittext(mEditShopName.getText().toString())
+                    ||emptyEdittext(mEditAddress.getText().toString())
+                    ||emptyEdittext(mEditAddressSub.getText().toString())
+                    ||emptyEdittext(mEditName.getText().toString())
+                    || mBoolAuth == false){
+                    Toast.makeText(mContext, "모든 값을 입력하셔야 합니다.", Toast.LENGTH_SHORT).show();
+//                    return;
+                }
+//                else{
+//                    SharedPreUtil.setBusinessName(mContext, mEditName.getText().toString());
+//                    SharedPreUtil.setShopName(mContext, mEditName.getText().toString());
+//                    SharedPreUtil.setAddress(mContext, mEditAddress.getText().toString() + " " + mEditAddressSub.getText().toString());
+//                    SharedPreUtil.setBusinessNumber(mContext,
+//                            mEditBusinessNumber[0].getText().toString() +"-"+
+//                            mEditBusinessNumber[1].getText().toString() +"-"+
+//                            mEditBusinessNumber[2].getText().toString()
+//                    );
+
+                    Intent intent = new Intent(mContext, MallSignup2Activity.class);
+                    intent.putExtra("shop_name", mEditShopName.getText().toString());
+                    startActivity(intent);
                 break;
         }
     }
 
+    Handler authHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            notiDialog("성공", "인증 되었습니다.");
+        }
+    };
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -108,6 +152,13 @@ public class MallSignupActivity extends AppCompatActivity {
                 mTvShopBuisness.setText(data.getStringExtra("returnValue"));
             }
         }
+    }
+
+    private boolean emptyEdittext(String check){
+        if (TextUtils.isEmpty(check))
+            return true;
+        else
+            return false;
     }
 
     private CustomDialog notiDlg;

@@ -39,52 +39,52 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_child_ibtn_0"
+            android:id="@+id/category_sub_ibtn_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onSubMenuClick"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_child_txt_0"
+            android:id="@+id/category_sub_txt_0"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:enabled="true"
             android:onClick="onSubMenuClick"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
-            android:text="캐주얼"/>
+            android:textColor="@color/color_7b7b7b"
+            android:text="신생아"/>
         <ImageButton
-            android:id="@+id/category_child_ibtn_1"
+            android:id="@+id/category_sub_ibtn_1"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:onClick="onSubMenuClick"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
+            android:textColor="@color/color_7b7b7b"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_child_txt_1"
+            android:id="@+id/category_sub_txt_1"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:clickable="true"
             android:onClick="onSubMenuClick"
             android:layout_height="wrap_content"
             android:textColor="@color/color_7b7b7b"
-            android:text="정장"/>
+            android:text="아동"/>
         <ImageButton
-            android:id="@+id/category_child_ibtn_2"
+            android:id="@+id/category_sub_ibtn_2"
             android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_child_txt_2"
+            android:id="@+id/category_sub_txt_2"
             android:layout_width="wrap_content"
             android:textColor="@color/color_7b7b7b"
             android:layout_marginLeft="5dp"
             android:onClick="onSubMenuClick"
             android:layout_height="wrap_content"
-            android:text="란제리"/>
+            android:text="주니어"/>
     </LinearLayout>
 
 
@@ -122,44 +122,44 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_man_ibtn_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_3"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_man_txt_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_3"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
+            android:textColor="@color/color_7b7b7b"
             android:text="캐주얼"/>
         <ImageButton
-            android:id="@+id/category_man_ibtn_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_4"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_man_txt_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_4"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:textColor="@color/color_7b7b7b"
             android:layout_height="wrap_content"
             android:text="정장"/>
         <ImageButton
-            android:id="@+id/category_man_ibtn_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_5"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_man_txt_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_5"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
@@ -202,44 +202,44 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_woman_ibtn_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_6"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_woman_txt_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_6"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
+            android:textColor="@color/color_7b7b7b"
             android:text="캐주얼"/>
         <ImageButton
-            android:id="@+id/category_woman_ibtn_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_7"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_woman_txt_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_7"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:textColor="@color/color_7b7b7b"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
             android:text="정장"/>
         <ImageButton
-            android:id="@+id/category_woman_ibtn_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_8"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_woman_txt_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_8"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:textColor="@color/color_7b7b7b"
             android:layout_marginLeft="5dp"
@@ -282,49 +282,49 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_mrs_ibtn_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_9"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_mrs_txt_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_9"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
+            android:textColor="@color/color_7b7b7b"
             android:text="캐주얼"/>
         <ImageButton
-            android:id="@+id/category_mrs_ibtn_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_10"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_mrs_txt_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_10"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:textColor="@color/color_7b7b7b"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
             android:text="정장"/>
         <ImageButton
-            android:id="@+id/category_mrs_ibtn_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_11"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_mrs_txt_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_11"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
             android:textColor="@color/color_7b7b7b"
-            android:text="란제리"/>
+            android:text="임부복"/>
     </LinearLayout>
 
 
@@ -362,49 +362,49 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_theme_ibtn_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_12"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_theme_txt_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_12"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
-            android:text="캐주얼"/>
+            android:textColor="@color/color_7b7b7b"
+            android:text="웨딩"/>
         <ImageButton
-            android:id="@+id/category_theme_ibtn_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_13"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_theme_txt_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_13"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
             android:textColor="@color/color_7b7b7b"
-            android:text="정장"/>
+            android:text="한복"/>
         <ImageButton
-            android:id="@+id/category_theme_ibtn_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_14"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_theme_txt_2"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_14"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
             android:textColor="@color/color_7b7b7b"
-            android:text="란제리"/>
+            android:text="파티드레스"/>
     </LinearLayout>
 
 
@@ -442,49 +442,34 @@
         android:paddingLeft="15dp"
         android:visibility="gone">
         <ImageButton
-            android:id="@+id/category_sport_ibtn_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_15"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_category_on"/>
+            android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_sport_txt_0"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_15"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_7131ad"
-            android:text="캐주얼"/>
+            android:textColor="@color/color_7b7b7b"
+            android:text="트레이닝"/>
         <ImageButton
-            android:id="@+id/category_sport_ibtn_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_ibtn_16"
+            android:onClick="onSubMenuClick"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_category"/>
         <TextView
-            android:id="@+id/category_sport_txt_1"
-            android:onClick="onClick"
+            android:id="@+id/category_sub_txt_16"
+            android:onClick="onSubMenuClick"
             android:layout_width="wrap_content"
             android:textColor="@color/color_7b7b7b"
             android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:text="정장"/>
-        <ImageButton
-            android:id="@+id/category_sport_ibtn_2"
-            android:onClick="onClick"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_category"/>
-        <TextView
-            android:id="@+id/category_sport_txt_2"
-            android:onClick="onClick"
-            android:layout_width="wrap_content"
-            android:textColor="@color/color_7b7b7b"
-            android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
-            android:text="란제리"/>
+            android:text="비치웨어"/>
     </LinearLayout>
 
 

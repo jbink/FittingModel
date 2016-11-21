@@ -17,6 +17,7 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.text.Html;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
@@ -47,6 +48,7 @@ public class GlobalValues {
 	public final static int LTE_3G = 1;
 	public final static int POPUP_RESULT = 1414;
 	public final static int POPUP_REQUEST = 1515;
+
 
 	static Typeface mFont = null;
 	/**
@@ -524,5 +526,17 @@ public class GlobalValues {
 			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			window.setStatusBarColor(ContextCompat.getColor(activity, R.color.colorPrimary));
 		}
+	}
+
+	public static String getMyPhoneNumber(Context context){
+		TelephonyManager telManager = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
+		String phoneNum = telManager.getLine1Number();
+		Log.d("where", "tel : " + phoneNum);
+		if(!TextUtils.isEmpty(phoneNum) && phoneNum.substring(0,3).equals("+82")){
+			phoneNum = phoneNum.replace("+82", "0");
+			return phoneNum;
+		}
+		else
+			return "Empty Phone Number!";
 	}
 }

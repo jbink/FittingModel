@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
@@ -104,7 +105,7 @@ public class CustomDialog extends Dialog {
         }else if(left!=null && right==null){
         	if(!TextUtils.isEmpty(mLeftText))
         		mLeftButton.setText(mLeftText);
-        	mLeftButton.setBackgroundColor(Color.rgb(0x00, 0x68, 0x38));//006838
+        	mLeftButton.setBackgroundColor(ContextCompat.getColor(mContext, R.color.color_select));//006838
         	mLeftButton.setOnClickListener(left);
         	mRightButton.setVisibility(View.GONE);
         }else {

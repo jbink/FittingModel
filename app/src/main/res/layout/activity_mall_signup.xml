@@ -48,6 +48,7 @@
 
             <!-- 사업자명 -->
             <TextView
+                android:id="@+id/mall_signup_txt_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -67,6 +68,7 @@
 
             <!-- 사업형태 -->
             <TextView
+                android:id="@+id/mall_signup_txt_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -101,6 +103,7 @@
 
             <!-- 사업자 등록번호 -->
             <TextView
+                android:id="@+id/mall_signup_txt_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -157,7 +160,7 @@
                     android:textSize="14dp" />
 
                 <TextView
-                    android:id="@+id/mall_signup_tv_auth"
+                    android:id="@+id/mall_signup_btn_auth"
                     style="@style/edittext_padding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -174,6 +177,7 @@
 
             <!-- 사업자 등록번호 경고 -->
             <TextView
+                android:id="@+id/mall_signup_txt_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -183,6 +187,7 @@
 
             <!-- 대표자명 -->
             <TextView
+                android:id="@+id/mall_signup_txt_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -191,16 +196,22 @@
                 android:textSize="16dp" />
 
             <EditText
+                android:id="@+id/mall_signup_edt_name"
                 style="@style/edittext_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/round_rect_edit"
                 android:hint="이름"
+                android:maxLines="1"
+                android:lines="1"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:textSize="14dp" />
 
             <!-- 주소 -->
             <TextView
+                android:id="@+id/mall_signup_txt_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -210,19 +221,27 @@
 
 
             <EditText
+                android:id="@+id/mall_signup_edt_address"
                 style="@style/edittext_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:lines="1"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:background="@drawable/round_rect_edit"
                 android:hint="주소를 입력하세요"
                 android:textSize="14dp" />
 
             <EditText
+                android:id="@+id/mall_signup_edt_address_sub"
                 style="@style/edittext_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:lines="1"
                 android:background="@drawable/round_rect_edit"
                 android:hint="세부 주소를 입력하세요"
                 android:textSize="14dp" />

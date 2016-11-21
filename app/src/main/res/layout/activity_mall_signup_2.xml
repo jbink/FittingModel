@@ -52,6 +52,7 @@
 
                 <!-- 사업자명 -->
                 <TextView
+                    android:id="@+id/mall_signup_2_tv_0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -60,6 +61,7 @@
                     android:textSize="16dp" />
 
                 <TextView
+                    android:id="@+id/mall_signup_2_tv_shop_name"
                     style="@style/edittext_padding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,54 +70,13 @@
                     android:hint="상호명"
                     android:textSize="14dp" />
 
-                <!-- 사업형태 -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="사업자 소개"
-                    android:textColor="#404040"
-                    android:textSize="16dp" />
-
-
-                <EditText
-                    style="@style/edittext_padding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/round_rect_edit"
-                    android:hint="쇼핑몰 소개"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:textSize="14dp" />
-
-                <!-- 사업자 URL -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="사업자 URL"
-                    android:textColor="#404040"
-                    android:textSize="16dp" />
-
-
-                <EditText
-                    style="@style/edittext_padding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/round_rect_edit"
-                    android:hint="쇼핑몰 주소"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:textSize="14dp" />
-
                 <!-- 연락처 -->
                 <TextView
+                    android:id="@+id/mall_signup_2_tv_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="연락처"
+                    android:text="연락처(ID)"
                     android:textColor="#404040"
                     android:textSize="16dp" />
 
@@ -126,7 +87,8 @@
                     android:orientation="horizontal"
                     android:weightSum="5">
 
-                    <EditText
+                    <TextView
+                        android:id="@+id/mall_signup_2_tv_phone_num"
                         style="@style/edittext_padding"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -135,12 +97,11 @@
                         android:gravity="center"
                         android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:maxLength="3"
                         android:textSize="14dp" />
 
 
                     <TextView
-                        android:id="@+id/mall_signup_2_tv_auth_num"
+                        android:id="@+id/mall_signup_2_btn_auth_num"
                         style="@style/edittext_padding"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -155,7 +116,9 @@
                         android:textSize="15dp" />
                 </LinearLayout>
 
+                <!-- 인증번호 입력 -->
                 <TextView
+                    android:id="@+id/mall_signup_2_tv_auth_num"
                     style="@style/edittext_padding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -165,8 +128,83 @@
                     android:hint="인증번호를 입력하세요"
                     android:textSize="14dp" />
 
+
+
+                <!-- 비밀번호 -->
+                <TextView
+                    android:id="@+id/mall_signup_2_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="비밀번호"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/mall_signup_2_edt_pw"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="비밀번호를 입력하세요"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="14dp" />
+
+
+                <!-- 사업형태 -->
+                <TextView
+                    android:id="@+id/mall_signup_2_tv_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="사업자 소개"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/mall_signup_2_edt_introduce"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="쇼핑몰 소개"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="14dp" />
+
+                <!-- 사업자 URL -->
+                <TextView
+                    android:id="@+id/mall_signup_2_tv_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="사업자 URL"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/mall_signup_2_edt_url"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="쇼핑몰 주소"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="14dp" />
+
+
+
                 <!-- 쇼핑몰 카테고리 -->
                 <TextView
+                    android:id="@+id/mall_signup_2_tv_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -177,33 +215,6 @@
 
                 <include layout="@layout/include_category" />
 
-                <!-- 주소 -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="주소"
-                    android:textColor="#404040"
-                    android:textSize="16dp" />
-
-
-                <EditText
-                    style="@style/edittext_padding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/round_rect_edit"
-                    android:hint="주소를 입력하세요"
-                    android:textSize="14dp" />
-
-                <EditText
-                    style="@style/edittext_padding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/round_rect_edit"
-                    android:hint="세부 주소를 입력하세요"
-                    android:textSize="14dp" />
 
             </LinearLayout>
 
