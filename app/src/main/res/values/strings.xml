@@ -12,4 +12,9 @@ NICE평가정보㈜에 등록되어 있지 않은 기업은 사업자등록증 �
 고객센터(Fax.02-565-1234)나 (helpdesk@model.co.kr)로
 보내주시기 바랍니다.</string>
 
+
+    <string name="pager_txt_0">총작업 &lt;font color=#ff8401>7&lt;/font>건</string>
+    <string name="pager_txt_1">모델제시 &lt;font color=#ff8401>23&lt;/font>건</string>
+    <string name="pager_txt_2">만족도 &lt;font color=#ff8401>78&lt;/font>%</string>
+
 </resources>

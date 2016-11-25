@@ -67,9 +67,11 @@ public class MallSearchShopAdapter extends BaseAdapter {
             holder = (ViewHolder)convertView.getTag();
         }
 
+        holder.tv_name.setText(data.getName());
+        holder.tv_content.setText(data.getContent());
 
-
-
+        int id = mContext.getResources().getIdentifier("shop0"+(position+1), "drawable", mContext.getPackageName());
+        holder.iv_picture.setBackgroundResource(id);
 
 
         return convertView;

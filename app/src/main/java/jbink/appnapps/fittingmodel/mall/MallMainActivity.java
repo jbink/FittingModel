@@ -20,17 +20,23 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import jbink.appnapps.fittingmodel.LoginActivity;
 import jbink.appnapps.fittingmodel.R;
+import jbink.appnapps.fittingmodel.mall.entire.MallEntireFragment;
+import jbink.appnapps.fittingmodel.mall.interest.MallInterestFragment;
 import jbink.appnapps.fittingmodel.mall.ranking.MallRankingFragment;
 import jbink.appnapps.fittingmodel.mall.recommend.MallRecommendFragment;
+import jbink.appnapps.fittingmodel.mall.searchshop.FragmentChangeListener;
 import jbink.appnapps.fittingmodel.mall.searchshop.MallSearchFragment;
 import jbink.appnapps.fittingmodel.mall.searchshop.MallSearchShopOptionFragment;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
+import jbink.appnapps.fittingmodel.util.SharedPreUtil;
 
 /**
  * Created by user on 2016-11-14.
  */
-public class MallMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MallMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        FragmentChangeListener {
 
     Context mContext;
     DrawerLayout mDrawer;
@@ -38,6 +44,8 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
     //상단 탭
     ImageButton[] mIbtnTabs;
     TextView[] mTvTabs;
+
+    TextView mTvShopName, mTvShopCategory, mTvShopUrl, mTvShopIntroduce, mTvBusinessNumber, mTvBusinessName, mTvShopAddress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,16 +100,52 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.mall_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerLayout = navigationView.getHeaderView(0);
+
+        mTvShopName = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_name);
+        mTvShopName.setTypeface(GlobalValues.getFont(mContext));
+        mTvShopName.setText(SharedPreUtil.getShopName(mContext));
+        mTvShopCategory = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_category);
+        mTvShopCategory.setTypeface(GlobalValues.getFont(mContext));
+        mTvShopCategory.setText(SharedPreUtil.getShopCategory(mContext));
+        mTvShopUrl = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_url);
+        mTvShopUrl.setTypeface(GlobalValues.getFont(mContext));
+        mTvShopUrl.setText(SharedPreUtil.getShopUrl(mContext));
+        mTvShopIntroduce = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_introduce);
+        mTvShopIntroduce.setTypeface(GlobalValues.getFont(mContext));
+        mTvShopIntroduce.setText(SharedPreUtil.getShopIntroduce(mContext));
+        mTvBusinessName = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_business_name);
+        mTvBusinessName.setTypeface(GlobalValues.getFont(mContext));
+        mTvBusinessName.setText(SharedPreUtil.getBusinessName(mContext));
+        mTvBusinessNumber = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_business_number);
+        mTvBusinessNumber.setTypeface(GlobalValues.getFont(mContext));
+        mTvBusinessNumber.setText(SharedPreUtil.getBusinessNumber(mContext));
+        mTvShopAddress = (TextView)headerLayout.findViewById(R.id.mall_nav_shop_address);
+        mTvShopAddress.setTypeface(GlobalValues.getFont(mContext));
+        mTvShopAddress.setText(SharedPreUtil.getShopAddress(mContext));
 
         fragmentReplace(0);
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        Intent intent;
+        int id = item.getItemId();
+        if (id == R.id.mall_logout) {
+            intent = new Intent(mContext, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        } else if (id == R.id.mall_withdraw) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        }
+        mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -124,12 +168,12 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
             case R.id.main_tab_layout_2 :
             case R.id.main_tab_ibtn_2 :
             case R.id.main_tab_txt_2 :
-                setTabsBack(2);
+                setTabsBack(2); fragmentReplace(2);
                 break;
             case R.id.main_tab_layout_3 :
             case R.id.main_tab_ibtn_3 :
             case R.id.main_tab_txt_3 :
-                setTabsBack(3);
+                setTabsBack(3); fragmentReplace(3);
                 break;
             case R.id.main_tab_layout_4 :
             case R.id.main_tab_ibtn_4 :
@@ -153,11 +197,14 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
     public void fragmentReplace(int reqNewFragmentIndex) {
         Fragment newFragment = null;
         newFragment = getFragment(reqNewFragmentIndex);
+
+//        replaceFragment(newFragment);
+
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.mall_content_frame, newFragment, "main" + String.valueOf(reqNewFragmentIndex));
+        transaction.replace(R.id.mall_content_frame, newFragment);
         transaction.commitAllowingStateLoss();
-
+//
         getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 
@@ -170,12 +217,15 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
             case 1:
                 newFragment = new MallSearchFragment().newInstance();
                 break;
+            case 2:
+                newFragment = new MallEntireFragment().newInstance();
+                break;
+            case 3:
+                newFragment = new MallInterestFragment().newInstance();
+                break;
             case 4:
-            newFragment = new MallRankingFragment().newInstance();
-            break;
-//            case 3:
-//                newFragment = new MyPageFragment().newInstance(page);
-//                break;
+                newFragment = new MallRankingFragment().newInstance();
+                break;
         }
         return newFragment;
     }
@@ -195,5 +245,14 @@ public class MallMainActivity extends AppCompatActivity implements NavigationVie
                         }
                     }).show();
         }
+    }
+
+    @Override
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();;
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.mall_content_frame, fragment, fragment.toString());
+        fragmentTransaction.addToBackStack(fragment.toString());
+        fragmentTransaction.commit();
     }
 }

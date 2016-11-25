@@ -3,6 +3,7 @@ package jbink.appnapps.fittingmodel.util;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.text.Html;
@@ -16,9 +17,18 @@ import jbink.appnapps.fittingmodel.R;
 
 
 public class CustomDialog extends Dialog {
-	
-	String mLeftText = null;
-	String mRightText = null;
+
+    private TextView mTitleView;
+    private TextView mContentView;
+    private Button mLeftButton;
+    private Button mRightButton;
+    private View.OnClickListener mLeftClickListener;
+    private View.OnClickListener mRightClickListener;
+
+    private String mTitle;
+    private String mContent;
+    String mLeftText = null;
+    String mRightText = null;
 	
 	Context mContext;
 	@Override
@@ -44,57 +54,15 @@ public class CustomDialog extends Dialog {
         super(context , android.R.style.Theme_Translucent_NoTitleBar);
     }
 
-     
-    public CustomDialog(Context context, String title, String content, View.OnClickListener singleListener) {
-        super(context , android.R.style.Theme_Translucent_NoTitleBar);
-        mContext = context;
-        this.mTitle = title;
-        this.mContent = content;
-        this.mLeftClickListener = singleListener;
-    }
-    
-    public CustomDialog(Context context, String title, String content, View.OnClickListener singleListener, String lBtnText) {
-        super(context , android.R.style.Theme_Translucent_NoTitleBar);
-        mContext = context;
-        this.mTitle = title;
-        this.mLeftClickListener = singleListener;
-        this.mContent = content;
-        this.mLeftText = lBtnText;
-    }
-     
-    public CustomDialog(Context context , String title , String content , 
-            View.OnClickListener leftListener , View.OnClickListener rightListener) {
-        super(context , android.R.style.Theme_Translucent_NoTitleBar);
-        mContext = context;
-        this.mTitle = title;
-        this.mContent = content;
-        this.mLeftClickListener = leftListener;
-        this.mRightClickListener = rightListener;
-    }
-     
     private void setTitle(String title){
         mTitleView.setText(title);
     }
-    
-    public CustomDialog(Context context , String title , String content , 
-            View.OnClickListener leftListener,  View.OnClickListener rightListener, String lBtnText, String rBtnText) {
-        super(context , android.R.style.Theme_Translucent_NoTitleBar);
-        mContext = context;
-        this.mTitle = title;
-        this.mContent = content;
-        this.mLeftClickListener = leftListener;
-        this.mRightClickListener = rightListener;
-        this.mLeftText = lBtnText;
-        this.mRightText = rBtnText;
-    }
-     
     private void setContent(String content){
         mContentView.setText(Html.fromHtml(content));
     }
      
     private void setClickListener(View.OnClickListener left , View.OnClickListener right){
         if(left!=null && right!=null){
-        	
         	if(!TextUtils.isEmpty(mLeftText))
         		mLeftButton.setText(mLeftText);
         	if(!TextUtils.isEmpty(mRightText))
@@ -113,16 +81,6 @@ public class CustomDialog extends Dialog {
         }
     }
      
-    private TextView mTitleView;
-    private TextView mContentView;
-    private Button mLeftButton;
-    private Button mRightButton;
-    private String mTitle;
-    private String mContent;
-     
-    private View.OnClickListener mLeftClickListener;
-    private View.OnClickListener mRightClickListener;
-     
     /*
      * Layout
      */
@@ -139,9 +97,63 @@ public class CustomDialog extends Dialog {
         mRightButton.setTypeface(GlobalValues.getFont(mContext));
     }
 
-//	@Override
-//	public void onBackPressed() {
-//	}
+    public static class Builder{
+        private Context context;
+        private String title;
+        private String content;
+        private String leftText = null;
+        private String rightText = null;
 
+        private View.OnClickListener leftClickListener;
+        private View.OnClickListener rightClickListener;
 
+        public Builder(Context _context){
+            context = _context;
+        }
+
+        public Builder(Context _context, int theme) {
+            context = _context;
+        }
+
+        public Builder title(String val){
+            title = val;
+            return this;
+        }
+        public Builder content(String val){
+            content = val;
+            return this;
+        }
+        public Builder leftText(String val){
+            leftText = val;
+            return this;
+        }
+        public Builder rightText(String val){
+            rightText = val;
+            return this;
+        }
+
+        public Builder leftListener(View.OnClickListener val){
+            leftClickListener = val;
+            return this;
+        }
+        public Builder rightListener(View.OnClickListener val){
+            rightClickListener = val;
+            return this;
+        }
+
+        public CustomDialog build(){
+            return new CustomDialog(context, this);
+        }
+    }
+
+    private CustomDialog(Context context, Builder builder){
+        super(context, android.R.style.Theme_Translucent_NoTitleBar);
+        mContext = context;
+        this.mTitle = builder.title;
+        this.mContent = builder.content;
+        this.mLeftClickListener = builder.leftClickListener;
+        this.mRightClickListener = builder.rightClickListener;
+        this.mLeftText = builder.leftText;
+        this.mRightText = builder.rightText;
+    }
 }

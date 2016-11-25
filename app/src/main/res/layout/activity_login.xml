@@ -9,7 +9,7 @@
         android:id="@+id/web_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/title_bg_color">
+        android:background="@color/colorPrimary">
 
         <RelativeLayout
             android:id="@+id/web_title"
@@ -43,72 +43,51 @@
         android:layout_height="match_parent"
         android:background="@drawable/main_back">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/transparent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="70dp"
-                android:text="I'M A \n MODEL"
-                android:textColor="@color/white"
-                android:textSize="40dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="피팅모델, 주부모델, 부분모델, 어린이 청소년모델,
-외국인모델등 온라인쇼핑몰과 모델을 편리하고 안전하게
-매칭해주는 구인구직 앱서비스 입니다. "
-                android:textColor="@color/white" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_login"
-                android:layout_marginTop="100dp"
-                android:layout_gravity="center_horizontal"/>
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/login_btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="380dp"
+            android:background="@drawable/btn_login"
+            android:onClick="onClick" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="40dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
             <Button
+                android:id="@+id/login_btn_mall"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/sel_btn_signup"
+                android:onClick="onClick"
                 android:text="쇼핑몰(사업주)가입"
-                android:textColor="@color/white"
-                android:background="@drawable/sel_btn_signup" />
-            
+                android:textColor="@color/white" />
+
             <ImageView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:background="#55504a"/>
-            
+                android:background="#55504a" />
+
 
             <Button
+                android:id="@+id/login_btn_model"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="모델(구직자)가입"
-                android:textColor="@color/white"
                 android:layout_weight="1"
-                android:background="@drawable/sel_btn_signup" />
+                android:background="@drawable/sel_btn_signup"
+                android:onClick="onClick"
+                android:text="모델(구직자)가입"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mall_signup_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/mall_signup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="모델 회원가입"
+                android:textColor="#ffffff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/default_background"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <!-- 사업자명 -->
+                <TextView
+                    android:id="@+id/model_signup_2_txt_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="이름"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/model_signup_2_edt_name"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="이름을 입력하세요"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:textSize="14dp" />
+
+                <!-- 사업형태 -->
+                <TextView
+                    android:id="@+id/model_signup_2_txt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="간단소개"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/model_signup_2_edt_introduce"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="선택하세요"
+                    android:onClick="onClick"
+                    android:lines="1"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:textSize="14dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/model_signup_2_txt_2"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="신장"
+                        android:textColor="#404040"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/model_signup_2_edt_formal"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:hint="cm"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/model_signup_2_txt_3"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="체중"
+                        android:textColor="#404040"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/model_signup_2_edt_weight"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:background="@drawable/round_rect_edit"
+                        android:enabled="true"
+                        android:hint="kg"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:onClick="onClick"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+
+                <!-- 대표자명 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/model_signup_2_txt_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="프로필 사진올리기(최대 10개)"
+                        android:textColor="#404040"
+                        android:textSize="16dp" />
+
+                    <Button
+                        android:id="@+id/model_signup_2_btn_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/btn_select_category_on"
+                        android:onClick="onClick"
+                        android:text="+ 사진등록"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_0"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_1"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_3"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_4"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_5"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_6"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_7"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_8"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                        <ImageView
+                            android:id="@+id/model_signup_2_pic_9"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_rect_white" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!-- 주소 -->
+                <TextView
+                    android:id="@+id/model_signup_2_txt_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="근무가능지역역"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/model_signup_2_edt_address"
+                    style="@style/edittext_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_rect_edit"
+                    android:hint="주소를 입력하세요"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textSize="14dp" />
+
+                <!-- 근무가능 시간 -->
+                <TextView
+                    android:id="@+id/model_signup_2_txt_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="근무가능 시간"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+
+                    <TextView
+                        android:id="@+id/model_signup_2_tv_start_date"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="시작날짜"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="~"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:id="@+id/model_signup_2_tv_end_date"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="끝날짜"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/model_signup_2_tv_time"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="시간대"
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+
+                <!-- 경력 -->
+                <TextView
+                    android:id="@+id/model_signup_2_txt_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="경력"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/model_signup_2_tv_career"
+                        style="@style/edittext_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_rect_edit"
+                        android:hint="선택하세요"
+                        android:onClick="onClick"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:text="▼" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Button
+                    android:id="@+id/model_signup_2_btn_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/color_7131ad"
+                    android:onClick="onClick"
+                    android:text="구직등록후 다음단계"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

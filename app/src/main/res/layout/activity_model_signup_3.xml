@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mall_signup_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/mall_signup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="모델 회원가입"
+                android:textColor="#ffffff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/default_background"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <!-- 구직정보 -->
+                <TextView
+                    android:id="@+id/model_signup_3_txt_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="구직정보 입력(추가항목)"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/model_signup_3_txt_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="모델분야"
+                        android:textColor="#404040"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <include layout="@layout/include_model_category" />
+
+                <!-- 나의 스타일 -->
+                <TextView
+                    android:id="@+id/model_signup_3_txt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="나의 스타일"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="여성스러운"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="스포티"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="모던시크"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="섹시"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="럭셔리"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="귀여운"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="빈티지"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="유니크"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="청순"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="베이직"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/model_style_tv_style_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/btn_select_category"
+                        android:gravity="center"
+                        android:onClick="onStyleClick"
+                        android:text="개성"
+                        android:textColor="@color/color_7b7b7b"
+                        android:textSize="11dp" />
+                </LinearLayout>
+
+                <!-- 나의 스타일 -->
+                <TextView
+                    android:id="@+id/model_signup_3_txt_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="원하는 급여"
+                    android:textColor="#404040"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/model_signup_3_tv_pay"
+                        style="@style/edittext_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_rect_edit"
+                        android:hint="선택하세요"
+                        android:onClick="onClick"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:text="▼" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Button
+                    android:id="@+id/model_signup_3_btn_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/color_7131ad"
+                    android:onClick="onClick"
+                    android:text="구직등록 완료"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -7,6 +7,32 @@ public class SharedPreUtil {
 
 	//SharedPreference 이름
 	static public String SHARED_PREF_NAME = "FittingModel";
+
+	/*************************************************************************************************/
+	//처음실행
+	static public String PREF_FIRST_PLAY = "first_play";
+	/**
+	 * 처음실행
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setFirstPlay(Context ctx, boolean value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putBoolean(PREF_FIRST_PLAY, value);
+		editor.commit();
+	}
+
+	/**
+	 * 처음실행
+	 *
+	 *  default -> true
+	 */
+	static public boolean getFirstPlay(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_FIRST_PLAY, true);
+	}
+
+
 /*************************************************************************************************/
 	//TokenID
 	static public String PREF_TOKEN_ID = "token_id";
@@ -32,8 +58,8 @@ public class SharedPreUtil {
 		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_TOKEN_ID, null);
 	}
 /*************************************************************************************************/
-	// PW
-	static public String PREF_PASSWORD = "password";
+
+		static public String PREF_PASSWORD = "app_password";
 	/**
 	 * PW
 	 *
@@ -56,16 +82,16 @@ public class SharedPreUtil {
 	}
 /*************************************************************************************************/
 	//아이디저장
-	static public String PREF_SAVE_ID = "save_id";
+	static public String PREF_ID = "app_id";
 	/**
 	 * 아이디저장
 	 *
 	 *  ctx
 	 *  value = Member UID
 	 */
-	static public void setSaveId(Context ctx, boolean value) {
+	static public void setId(Context ctx, String value) {
 		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
-		editor.putBoolean(PREF_SAVE_ID, value);
+		editor.putString(PREF_ID, value);
 		editor.commit();
 	}
 
@@ -74,10 +100,79 @@ public class SharedPreUtil {
 	 *
 	 *  default -> true
 	 */
-	static public boolean getSaveId(Context ctx) {
-		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_SAVE_ID, true);
+	static public String getId(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_ID, "");
 	}
 /*************************************************************************************************/
+	//몰, 모델 구분
+	static public String PREF_TYPE = "app_login_type";
+	/**
+	 * 아이디저장
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setLoginType(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_TYPE, value);
+		editor.commit();
+	}
+
+	/**
+	 * 아이디저장
+	 *
+	 *  default -> true
+	 */
+	static public String getLoginType(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_TYPE, "");
+	}
+//
+// PW
+//	static public String PREF_MALL_PASSWORD = "mall_password";
+//	/**
+//	 * PW
+//	 *
+//	 *  ctx
+//	 *  value = Member UID
+//	 */
+//	static public void setMallPw(Context ctx, String value) {
+//		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+//		editor.putString(PREF_MALL_PASSWORD, value);
+//		editor.commit();
+//	}
+//
+//	/**
+//	 * PW
+//	 *
+//	 *  default -> null
+//	 */
+//	static public String getMallPw(Context ctx) {
+//		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MALL_PASSWORD, null);
+//	}
+///*************************************************************************************************/
+//	//아이디저장
+//	static public String PREF_MALL_ID = "mall_id";
+//	/**
+//	 * 아이디저장
+//	 *
+//	 *  ctx
+//	 *  value = Member UID
+//	 */
+//	static public void setMallId(Context ctx, String value) {
+//		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+//		editor.putString(PREF_MALL_ID, value);
+//		editor.commit();
+//	}
+//
+//	/**
+//	 * 아이디저장
+//	 *
+//	 *  default -> true
+//	 */
+//	static public String getMallId(Context ctx) {
+//		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MALL_ID, "");
+//	}
+	/*************************************************************************************************/
 	//자동로그인
 	static public String PREF_AUTO_LOGIN = "auto_login";
 	/**
@@ -100,7 +195,29 @@ public class SharedPreUtil {
 	static public boolean getAutoLogin(Context ctx) {
 		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_AUTO_LOGIN, true);
 	}
+/*************************************************************************************************/
+	//자동로그인이 가능한지 check
+	static public String PREF_AUTO_LOGIN_CHECK = "auto_login_check";
+	/**
+	 * 자동로그인 가능한지
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setAutoLoginCheck(Context ctx, boolean value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putBoolean(PREF_AUTO_LOGIN_CHECK, value);
+		editor.commit();
+	}
 
+	/**
+	 * 자동로그인이 가능한지
+	 *
+	 *  default -> false
+	 */
+	static public boolean getAutoLoginCheck(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_AUTO_LOGIN_CHECK, false);
+	}
 /*************************************************************************************************/
 	//가게이름
 	static public String PREF_SHOP_NAME = "shop_name";
@@ -117,7 +234,7 @@ public class SharedPreUtil {
 	}
 
 	/**
-	 * 사업자명
+	 * 가게이름
 	 *
 	 *  default -> true
 	 */
@@ -152,7 +269,7 @@ public class SharedPreUtil {
 
 /*************************************************************************************************/
 	//사업자명
-	static public String PREF_BUSINESS_NAME = "business_number";
+	static public String PREF_BUSINESS_NAME = "business_name";
 	/**
 	 * 사업자명
 	 *
@@ -178,16 +295,16 @@ public class SharedPreUtil {
 /*************************************************************************************************/
 
 	//주소
-	static public String PREF_ADDRESS = "shop_address";
+	static public String PREF_SHOP_ADDRESS = "shop_address";
 	/**
 	 * 주소
 	 *
 	 *  ctx
 	 *  value = Member UID
 	 */
-	static public void setAddress(Context ctx, String value) {
+	static public void setShopAddress(Context ctx, String value) {
 		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
-		editor.putString(PREF_ADDRESS, value);
+		editor.putString(PREF_SHOP_ADDRESS, value);
 		editor.commit();
 	}
 
@@ -196,13 +313,263 @@ public class SharedPreUtil {
 	 *
 	 *  default -> true
 	 */
-	static public String getAddress(Context ctx) {
-		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_ADDRESS, "");
+	static public String getShopAddress(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_SHOP_ADDRESS, "");
 	}
 
 /*************************************************************************************************/
 
+	//URL
+	static public String PREF_SHOP_URL = "shop_url";
+	/**
+	 * URL
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setShopUrl(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_SHOP_URL, value);
+		editor.commit();
+	}
 
+	/**
+	 * URL
+	 *
+	 *  default -> true
+	 */
+	static public String getShopUrl(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_SHOP_URL, "");
+	}
+
+/*************************************************************************************************/
+
+	//카테고리
+	static public String PREF_SHOP_CATEGORY = "shop_category";
+	/**
+	 * 카테고리
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setShopCategory(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_SHOP_CATEGORY, value);
+		editor.commit();
+	}
+
+	/**
+	 * 카테고리
+	 *
+	 *  default -> true
+	 */
+	static public String getShopCategory(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_SHOP_CATEGORY, "");
+	}
+
+/*************************************************************************************************/
+
+	//가게소개
+	static public String PREF_SHOP_INTRODUCE = "shop_introduce";
+	/**
+	 * 가게소개
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setShopIntroduce(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_SHOP_INTRODUCE, value);
+		editor.commit();
+	}
+
+	/**
+	 * 가게소개
+	 *
+	 *  default -> true
+	 */
+	static public String getShopIntroduce(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_SHOP_INTRODUCE, "");
+	}
+
+/*************************************************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	/*  모델 part */
+
+	/*************************************************************************************************/
+//	// PW
+//	static public String PREF_MODEL_PASSWORD = "model_password";
+//	/**
+//	 * PW
+//	 *
+//	 *  ctx
+//	 *  value = Member UID
+//	 */
+//	static public void setModelPw(Context ctx, String value) {
+//		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+//		editor.putString(PREF_MODEL_PASSWORD, value);
+//		editor.commit();
+//	}
+//
+//	/**
+//	 * PW
+//	 *
+//	 *  default -> null
+//	 */
+//	static public String getModelPw(Context ctx) {
+//		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_PASSWORD, null);
+//	}
+//	/*************************************************************************************************/
+//	//아이디저장
+//	static public String PREF_MODEL_ID = "model_id";
+//	/**
+//	 * 아이디저장
+//	 *
+//	 *  ctx
+//	 *  value = Member UID
+//	 */
+//	static public void setModelId(Context ctx, String value) {
+//		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+//		editor.putString(PREF_MODEL_ID, value);
+//		editor.commit();
+//	}
+//
+//	/**
+//	 * 아이디저장
+//	 *
+//	 *  default -> ""
+//	 */
+//	static public String getModelId(Context ctx) {
+//		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_ID, "");
+//	}
+
+	/*************************************************************************************************/
+	//모델이름
+	static public String PREF_MODEL_NAME = "model_name";
+	/**
+	 * 모델이름
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setModelName(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_MODEL_NAME, value);
+		editor.commit();
+	}
+
+	/**
+	 * 모델이름
+	 *
+	 *  default -> true
+	 */
+	static public String getModelName(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_NAME, "");
+	}
+
+
+	/*************************************************************************************************/
+
+	//주소
+	static public String PREF_MODEL_ADDRESS = "model_address";
+	/**
+	 * 주소
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setModelAddress(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_MODEL_ADDRESS, value);
+		editor.commit();
+	}
+
+	/**
+	 * 주소
+	 *
+	 *  default -> true
+	 */
+	static public String getModelAddress(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_ADDRESS, "");
+	}
+
+	/*************************************************************************************************/
+
+	//카테고리
+	static public String PREF_MODEL_CATEGORY = "model_category";
+	/**
+	 * 카테고리
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setModelCategory(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_MODEL_CATEGORY, value);
+		editor.commit();
+	}
+
+	/**
+	 * 카테고리
+	 *
+	 *  default -> true
+	 */
+	static public String getModelCategory(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_CATEGORY, "");
+	}
+
+	/*************************************************************************************************/
+
+	//모델 간단소개
+	static public String PREF_MODEL_INTRODUCE = "model_introduce";
+	/**
+	 * 모델 간단소개
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setModelIntroduce(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_MODEL_INTRODUCE, value);
+		editor.commit();
+	}
+
+	/**
+	 * 모델 간단소개
+	 *
+	 *  default -> true
+	 */
+	static public String getModelIntroduce(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_INTRODUCE, "");
+	}
+
+	/*************************************************************************************************/
+
+	//URL
+	static public String PREF_MODEL_PIC_URL = "model_pic_url";
+	/**
+	 * 사진URL
+	 *
+	 *  ctx
+	 *  value = Member UID
+	 */
+	static public void setModelPicUrl(Context ctx, String value) {
+		SharedPreferences.Editor editor = ctx.getSharedPreferences(SHARED_PREF_NAME, 0).edit();
+		editor.putString(PREF_MODEL_PIC_URL, value);
+		editor.commit();
+	}
+
+	/**
+	 * 사진 URL
+	 *
+	 *  default -> true
+	 */
+	static public String getModelPicUrl(Context ctx) {
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getString(PREF_MODEL_PIC_URL, "");
+	}
+
+/*************************************************************************************************/
 
 
 }

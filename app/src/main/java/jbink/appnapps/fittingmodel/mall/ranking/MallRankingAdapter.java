@@ -1,6 +1,7 @@
 package jbink.appnapps.fittingmodel.mall.ranking;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +80,24 @@ public class MallRankingAdapter extends BaseAdapter {
             holder = (ViewHolder)convertView.getTag();
         }
 
+        holder.tv_rank.setText(String.valueOf(data.getRank()));
+        holder.tv_shop.setText(data.getShop());
+        holder.tv_content.setText(data.getContent());
+        holder.tv_match.setText(String.valueOf(data.getMatch()) + "%");
+        holder.tv_review.setText(String.valueOf(data.getReview()) + "점");
 
+        holder.tv_rank.setTypeface(GlobalValues.getFont(mContext));
+        holder.tv_content.setTypeface(GlobalValues.getFont(mContext));
+        holder.tv_match.setTypeface(GlobalValues.getFont(mContext));
+        holder.tv_review.setTypeface(GlobalValues.getFont(mContext));
+        holder.tv_rank.setTypeface(GlobalValues.getFont(mContext));
+        Log.d("where", "" + data.getMatch());
+
+        holder.pb_match.setProgress(data.getMatch());
+        holder.pb_review.setProgress(data.getReview());
+
+        int id = mContext.getResources().getIdentifier("shop0"+(position+1), "drawable", mContext.getPackageName());
+        holder.iv_picture.setBackgroundResource(id);
 
 
 

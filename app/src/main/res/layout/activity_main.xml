@@ -16,7 +16,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         android:background="@drawable/icon_list"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:headerLayout="@layout/mall_nav_header"
+        app:menu="@menu/activity_mall_main_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

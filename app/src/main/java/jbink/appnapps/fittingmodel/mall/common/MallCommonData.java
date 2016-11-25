@@ -1,23 +1,25 @@
-package jbink.appnapps.fittingmodel.mall.recommend;
+package jbink.appnapps.fittingmodel.mall.common;
 
 /**
  * Created by user on 2016-11-14.
  */
-public class MallRecommendData {
+public class MallCommonData {
     private String picture;
     private String shop;
     private String cost;
     private String content;
     private String time;
-    private boolean bookmark;
+    private String bookmark;
+    private String recommend;
 
-    public MallRecommendData(String picture, String shop, String cost, String content, String time, boolean bookmark) {
+    public MallCommonData(String picture, String shop, String cost, String content, String time, String bookmark, String recommend) {
         this.picture = picture;
         this.shop = shop;
         this.cost = cost;
         this.content = content;
         this.time = time;
         this.bookmark = bookmark;
+        this.recommend = recommend;
     }
 
     public String getPicture() {
@@ -60,11 +62,19 @@ public class MallRecommendData {
         this.time = time;
     }
 
-    public boolean isBookmark() {
+    public String getBookmark() {
         return bookmark;
     }
 
-    public void setBookmark(boolean bookmark) {
+    public void setBookmark(String bookmark) {
         this.bookmark = bookmark;
+    }
+
+    public String getRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(String recommend) {
+        this.recommend = recommend;
     }
 }

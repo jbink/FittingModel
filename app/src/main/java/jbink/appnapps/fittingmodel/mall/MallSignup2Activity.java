@@ -20,13 +20,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import jbink.appnapps.fittingmodel.R;
 import jbink.appnapps.fittingmodel.mall.guin.MallGuinActivity;
 import jbink.appnapps.fittingmodel.util.CustomDialog;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
+import jbink.appnapps.fittingmodel.util.SharedPreUtil;
 
 /**
  * Created by user on 2016-11-16.
@@ -34,6 +37,7 @@ import jbink.appnapps.fittingmodel.util.GlobalValues;
 public class MallSignup2Activity extends AppCompatActivity {
 
     private final int CATEGORY_LENGTH = 17;
+    private final int REQ_MALL_SIGNUP_2 = 10011;
 
     Context mContext;
 
@@ -41,16 +45,15 @@ public class MallSignup2Activity extends AppCompatActivity {
     LinearLayout[] mLayoutSubCategory;
     TextView[] mTvArrow;
 
-//    ImageButton[] mIbtnChild, mIbtnMan, mIbtnWoman, mIbtnMrs, mIbtnTheme, mIbtnSport;
     ImageButton[] mIbtnSubCategory;
     String mStrCategory = null;
-//    TextView[] mTvChild, mTvMan, mTvWoman, mTvMrs, mTvTheme, mTvSportSubCategory;
     TextView[] mTvSubCategory;
     String mStrCategorySub = null;
+    Map<Integer, Integer> mMapIds = new HashMap<>();
 
     TextView mTvAuthNum, mTvPhoneNum, mTvShopName;
 
-    EditText mEdtPw, mEdtIntroduce;
+    EditText mEdtPw, mEdtIntroduce, mEdtUrl;
 
     Button aa;
 
@@ -88,18 +91,50 @@ public class MallSignup2Activity extends AppCompatActivity {
             case R.id.mall_signup_2_btn_next :
                 if(emptyEdittext(mEdtPw.getText().toString())
                         || emptyEdittext(mEdtIntroduce.getText().toString())
+                        || emptyEdittext(mEdtUrl.getText().toString())
                         || emptyEdittext(mStrCategory)
                         || emptyEdittext(mStrCategorySub)){
                     Toast.makeText(mContext, "모든 값을 입력하셔야 합니다.", Toast.LENGTH_SHORT).show();
-//                    return;
+                    return;
                 }
+
+                SharedPreUtil.setId(mContext, mTvPhoneNum.getText().toString());
+                SharedPreUtil.setPw(mContext, mEdtPw.getText().toString());
+                SharedPreUtil.setShopIntroduce(mContext, mEdtIntroduce.getText().toString());
+                SharedPreUtil.setShopUrl(mContext, mEdtUrl.getText().toString());
+                SharedPreUtil.setShopCategory(mContext, mStrCategory + "  "+mStrCategorySub);
+
                 intent = new Intent(mContext, MallGuinActivity.class);
+                intent.putExtra("category", mStrCategory);
+                intent.putExtra("category_sub", mStrCategorySub);
+                startActivityForResult(intent, REQ_MALL_SIGNUP_2);
+
+                setResult(RESULT_OK);
+                finish();
+                break;
+            case R.id.mall_signup_2_btn_ok :
+                if(emptyEdittext(mEdtPw.getText().toString())
+                        || emptyEdittext(mEdtIntroduce.getText().toString())
+                        || emptyEdittext(mEdtUrl.getText().toString())
+                        || emptyEdittext(mStrCategory)
+                        || emptyEdittext(mStrCategorySub)){
+                    Toast.makeText(mContext, "모든 값을 입력하셔야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                SharedPreUtil.setId(mContext, mTvPhoneNum.getText().toString());
+                SharedPreUtil.setPw(mContext, mEdtPw.getText().toString());
+                SharedPreUtil.setShopIntroduce(mContext, mEdtIntroduce.getText().toString());
+                SharedPreUtil.setShopUrl(mContext, mEdtUrl.getText().toString());
+                SharedPreUtil.setShopCategory(mContext, mStrCategory + "  "+mStrCategorySub);
+
+                intent = new Intent(mContext, MallMainActivity.class);
                 intent.putExtra("category", mStrCategory);
                 intent.putExtra("category_sub", mStrCategorySub);
                 startActivity(intent);
 
-                break;
-            case R.id.mall_signup_2_btn_ok :
+                setResult(RESULT_OK);
+                finish();
                 break;
             case R.id.category_sel_child_0 :
                 mStrCategory = "유아동";
@@ -128,6 +163,17 @@ public class MallSignup2Activity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ_MALL_SIGNUP_2){
+            if(resultCode == RESULT_OK){
+                setResult(RESULT_OK);
+                finish();
+            }
+        }
+    }
+
     public void setLayoutVisible(int idx){
         if(mLayoutSubCategory[idx].getVisibility() == View.VISIBLE){
             mLayoutSubCategory[idx].setVisibility(View.GONE);
@@ -142,60 +188,9 @@ public class MallSignup2Activity extends AppCompatActivity {
         mLayoutSubCategory[idx].setVisibility(View.VISIBLE);
     }
 
+
     public void onSubMenuClick(View v){
-        switch (v.getId()){
-            case R.id.category_sub_txt_0 :
-            case R.id.category_sub_ibtn_0 :
-                setSubMenuTextColor(0); break;
-            case R.id.category_sub_txt_1 :
-            case R.id.category_sub_ibtn_1 :
-                setSubMenuTextColor(1); break;
-            case R.id.category_sub_txt_2 :
-            case R.id.category_sub_ibtn_2 :
-                setSubMenuTextColor(2); break;
-            case R.id.category_sub_txt_3 :
-            case R.id.category_sub_ibtn_3 :
-                setSubMenuTextColor(3); break;
-            case R.id.category_sub_txt_4 :
-            case R.id.category_sub_ibtn_4 :
-                setSubMenuTextColor(4); break;
-            case R.id.category_sub_txt_5 :
-            case R.id.category_sub_ibtn_5 :
-                setSubMenuTextColor(5); break;
-            case R.id.category_sub_txt_6 :
-            case R.id.category_sub_ibtn_6 :
-                setSubMenuTextColor(6); break;
-            case R.id.category_sub_txt_7 :
-            case R.id.category_sub_ibtn_7 :
-                setSubMenuTextColor(7); break;
-            case R.id.category_sub_txt_8 :
-            case R.id.category_sub_ibtn_8 :
-                setSubMenuTextColor(8); break;
-            case R.id.category_sub_txt_9 :
-            case R.id.category_sub_ibtn_9 :
-                setSubMenuTextColor(9); break;
-            case R.id.category_sub_txt_10 :
-            case R.id.category_sub_ibtn_10 :
-                setSubMenuTextColor(10); break;
-            case R.id.category_sub_txt_11 :
-            case R.id.category_sub_ibtn_11 :
-                setSubMenuTextColor(11); break;
-            case R.id.category_sub_txt_12 :
-            case R.id.category_sub_ibtn_12:
-                setSubMenuTextColor(12); break;
-            case R.id.category_sub_txt_13 :
-            case R.id.category_sub_ibtn_13 :
-                setSubMenuTextColor(13); break;
-            case R.id.category_sub_txt_14 :
-            case R.id.category_sub_ibtn_14 :
-                setSubMenuTextColor(14); break;
-            case R.id.category_sub_txt_15 :
-            case R.id.category_sub_ibtn_15 :
-                setSubMenuTextColor(15); break;
-            case R.id.category_sub_txt_16 :
-            case R.id.category_sub_ibtn_16 :
-                setSubMenuTextColor(16); break;
-        }
+        setSubMenuTextColor(mMapIds.get(v.getId()));
     }
 
     public void setSubMenuTextColor(int selected_id){
@@ -208,18 +203,6 @@ public class MallSignup2Activity extends AppCompatActivity {
 
         mStrCategorySub = mTvSubCategory[selected_id].getText().toString();
     }
-
-//    public void setSubMenuTextColor(int selected_id, int other_1, int other_2){
-//        ((TextView)findViewById(selected_id)).setTextColor(ContextCompat.getColor(mContext, R.color.title_bg_color));
-//        ((TextView)findViewById(other_1)).setTextColor(ContextCompat.getColor(mContext, R.color.color_7b7b7b));
-//        ((TextView)findViewById(other_2)).setTextColor(ContextCompat.getColor(mContext, R.color.color_7b7b7b));
-//    }
-//    public void setSubMenuIbtnColor(int selected_id, int other_1, int other_2){
-//        ((ImageButton)findViewById(selected_id)).setBackgroundResource(R.drawable.btn_category_on);
-//        ((ImageButton)findViewById(other_1)).setBackgroundResource(R.drawable.btn_category);
-//        ((ImageButton)findViewById(other_2)).setBackgroundResource(R.drawable.btn_category);
-//    }
-
 
 
     private void layoutBinding(){
@@ -254,6 +237,9 @@ public class MallSignup2Activity extends AppCompatActivity {
             mIbtnSubCategory[i] = (ImageButton)findViewById(ibtn);
             int tv = getResources().getIdentifier("category_sub_txt_"+i, "id", "jbink.appnapps.fittingmodel");
             mTvSubCategory[i] = (TextView) findViewById(tv);
+
+            mMapIds.put(mIbtnSubCategory[i].getId(), i);
+            mMapIds.put(mTvSubCategory[i].getId(), i);
         }
 
         mTvShopName = (TextView)findViewById(R.id.mall_signup_2_tv_shop_name);
@@ -268,16 +254,21 @@ public class MallSignup2Activity extends AppCompatActivity {
         mEdtPw.setTypeface(GlobalValues.getFont(mContext));
         mEdtIntroduce = (EditText) findViewById(R.id.mall_signup_2_edt_introduce);
         mEdtIntroduce.setTypeface(GlobalValues.getFont(mContext));
+        mEdtUrl = (EditText) findViewById(R.id.mall_signup_2_edt_url);
+        mEdtUrl.setTypeface(GlobalValues.getFont(mContext));
         for(int i=0 ; i<6 ; i++){
             int txtTv = getResources().getIdentifier("mall_signup_2_tv_"+i, "id", "jbink.appnapps.fittingmodel");
             ((TextView)findViewById(txtTv)).setTypeface(GlobalValues.getFont(mContext));
         }
+
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_0)).setTypeface(GlobalValues.getFont(mContext));
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_1)).setTypeface(GlobalValues.getFont(mContext));
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_2)).setTypeface(GlobalValues.getFont(mContext));
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_3)).setTypeface(GlobalValues.getFont(mContext));
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_4)).setTypeface(GlobalValues.getFont(mContext));
 //        ((TextView)findViewById(R.id.mall_signup_2_tv_5)).setTypeface(GlobalValues.getFont(mContext));
+
+
     }
 
     private boolean emptyEdittext(String check){
@@ -290,31 +281,26 @@ public class MallSignup2Activity extends AppCompatActivity {
 
     private CustomDialog authNumDlg;
     /**
-     * @param _message : 해당메세지
+     * @param _title : 해당메세지
      */
-    private void authNumDialog( String _message){
+    private void authNumDialog( String _title){
         Random r = new Random();
-        String message = _message;
+        String title = _title;
         final String content = String.valueOf((r.nextInt(8999)+1000));
-        authNumDlg = new CustomDialog(mContext, message, content,
-                new View.OnClickListener() {
+        authNumDlg = new CustomDialog.Builder(mContext)
+                .title(title)
+                .content(content)
+                .leftListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         authNumDlg.dismiss();
                         mTvAuthNum.setText(content);
                     }
-                }, "확인");
+                })
+                .leftText("확인")
+                .build();
         authNumDlg.show();
     }
-
-
-
-
-
-
-
-
-
 
 
 

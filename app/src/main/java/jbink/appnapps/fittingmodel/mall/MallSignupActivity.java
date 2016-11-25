@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import jbink.appnapps.fittingmodel.R;
 import jbink.appnapps.fittingmodel.util.CustomDialog;
+import jbink.appnapps.fittingmodel.util.CustomDialog2;
 import jbink.appnapps.fittingmodel.util.CustomPopup;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
 import jbink.appnapps.fittingmodel.util.SharedPreUtil;
@@ -30,6 +31,7 @@ import jbink.appnapps.fittingmodel.util.SharedPreUtil;
  * Created by user on 2016-11-16.
  */
 public class MallSignupActivity extends AppCompatActivity {
+    private final int REQ_MALL_SIGNUP_1 = 10001;
     Context mContext;
 
     EditText mEditShopName, mEditName, mEditAddress, mEditAddressSub;
@@ -60,6 +62,7 @@ public class MallSignupActivity extends AppCompatActivity {
 
         mEditShopName = (EditText)findViewById(R.id.mall_signup_shop_name);
         mEditShopName.setTypeface(GlobalValues.getFont(mContext));
+
         mEditName = (EditText)findViewById(R.id.mall_signup_edt_name);
         mEditName.setTypeface(GlobalValues.getFont(mContext));
         mEditAddress = (EditText)findViewById(R.id.mall_signup_edt_address);
@@ -118,24 +121,25 @@ public class MallSignupActivity extends AppCompatActivity {
                     ||emptyEdittext(mEditName.getText().toString())
                     || mBoolAuth == false){
                     Toast.makeText(mContext, "모든 값을 입력하셔야 합니다.", Toast.LENGTH_SHORT).show();
-//                    return;
+                    return;
                 }
-//                else{
-//                    SharedPreUtil.setBusinessName(mContext, mEditName.getText().toString());
-//                    SharedPreUtil.setShopName(mContext, mEditName.getText().toString());
-//                    SharedPreUtil.setAddress(mContext, mEditAddress.getText().toString() + " " + mEditAddressSub.getText().toString());
-//                    SharedPreUtil.setBusinessNumber(mContext,
-//                            mEditBusinessNumber[0].getText().toString() +"-"+
-//                            mEditBusinessNumber[1].getText().toString() +"-"+
-//                            mEditBusinessNumber[2].getText().toString()
-//                    );
+                SharedPreUtil.setBusinessName(mContext, mEditName.getText().toString());
+                SharedPreUtil.setShopName(mContext, mEditShopName.getText().toString());
+                SharedPreUtil.setShopAddress(mContext, mEditAddress.getText().toString() + " " + mEditAddressSub.getText().toString());
+                SharedPreUtil.setBusinessNumber(mContext,
+                        mEditBusinessNumber[0].getText().toString() + "-" +
+                                mEditBusinessNumber[1].getText().toString() + "-" +
+                                mEditBusinessNumber[2].getText().toString()
+                );
 
-                    Intent intent = new Intent(mContext, MallSignup2Activity.class);
-                    intent.putExtra("shop_name", mEditShopName.getText().toString());
-                    startActivity(intent);
+                Intent intent = new Intent(mContext, MallSignup2Activity.class);
+                intent.putExtra("shop_name", mEditShopName.getText().toString());
+                startActivityForResult(intent, REQ_MALL_SIGNUP_1);
                 break;
         }
     }
+
+
 
     Handler authHandler = new Handler(){
         @Override
@@ -144,12 +148,19 @@ public class MallSignupActivity extends AppCompatActivity {
             notiDialog("성공", "인증 되었습니다.");
         }
     };
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == GlobalValues.POPUP_REQUEST){
             if(resultCode == GlobalValues.POPUP_RESULT){
                 mTvShopBuisness.setText(data.getStringExtra("returnValue"));
+            }
+        }
+        if(requestCode == REQ_MALL_SIGNUP_1){
+            if(resultCode == RESULT_OK){
+                setResult(RESULT_OK);
+                finish();
             }
         }
     }
@@ -161,14 +172,14 @@ public class MallSignupActivity extends AppCompatActivity {
             return false;
     }
 
-    private CustomDialog notiDlg;
+    private CustomDialog2 notiDlg;
     /**
      * @param _message : 해당메세지
      */
     private void notiDialog( String _message, String _content){
         String message = _message;
         String content = _content;
-        notiDlg = new CustomDialog(mContext, message, content,
+        notiDlg = new CustomDialog2(mContext, message, content,
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

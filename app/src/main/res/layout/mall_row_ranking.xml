@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="(주)모모스타일"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/mall_row_ranking_txt_content"
@@ -66,7 +66,8 @@
                 android:layout_marginLeft="5dp"
                 android:text="테마의류, 웨딩"
                 android:textColor="#727272"
-                android:textSize="15dp" />
+                android:lines="1"
+                android:textSize="14dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,7 +93,6 @@
                 android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:progress="92"
                 android:max="100"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:progressDrawable="@drawable/progressbar_color"/>
@@ -130,7 +130,6 @@
                 android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:progress="62"
                 android:max="100"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:progressDrawable="@drawable/progressbar_color"/>

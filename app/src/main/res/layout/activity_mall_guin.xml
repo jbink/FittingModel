@@ -46,9 +46,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="20dp">
 
                 <!-- 사업자명 -->
                 <TextView
@@ -60,6 +60,7 @@
                     android:textSize="16dp" />
 
                 <TextView
+                    android:id="@+id/mall_guin_tv_shop_name"
                     style="@style/edittext_padding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,15 +71,14 @@
 
                 <!-- 사업형태 -->
                 <LinearLayout
-                    android:id="@+id/mall_guin_txt_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/mall_guin_txt_2"
+                        android:id="@+id/mall_guin_txt_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="쇼핑몰 카테고리"
@@ -86,7 +86,7 @@
                         android:textSize="16dp" />
 
                     <TextView
-                        android:id="@+id/mall_guin_txt_3"
+                        android:id="@+id/mall_guin_txt_category"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -97,7 +97,7 @@
                         android:textSize="11dp" />
 
                     <TextView
-                        android:id="@+id/mall_guin_txt_4"
+                        android:id="@+id/mall_guin_txt_category_sub"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -110,44 +110,85 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/mall_guin_txt_5"
+                    android:id="@+id/mall_guin_txt_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="근무시간"
                     android:textColor="#404040"
                     android:textSize="16dp" />
 
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-                    <TextView
-                        android:id="@+id/mall_guin_tv_work_time"
-                        android:onClick="onClick"
-                        style="@style/edittext_padding"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/round_rect_edit"
-                        android:text="날짜와 시간을 입력하세요"
-                        android:textSize="14dp" />
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="15dp"
-                        android:background="@drawable/arrow_next"/>
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
 
-                </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/mall_guin_tv_start_date"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="시작날짜"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="~"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:id="@+id/mall_guin_tv_end_date"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="끝날짜"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/mall_guin_tv_time"
+                        style="@style/edittext_padding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_rect_edit"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:onClick="onClick"
+                        android:text="시간대"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
 
 
                 <!-- 사업자 URL -->
                 <TextView
-                    android:id="@+id/mall_guin_txt_6"
+                    android:id="@+id/mall_guin_txt_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="근무장소"
                     android:textColor="#404040"
                     android:textSize="16dp" />
@@ -167,7 +208,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="horizontal"
                     android:weightSum="3">
 
@@ -178,7 +219,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/mall_guin_txt_7"
+                            android:id="@+id/mall_guin_txt_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="성별"
@@ -226,7 +267,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/mall_guin_txt_8"
+                            android:id="@+id/mall_guin_txt_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="연령대"
@@ -244,7 +285,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/round_rect_edit"
-                                android:text="남"
+                                android:text="연령대를 선택하세요."
                                 android:textSize="14dp" />
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -264,10 +305,10 @@
 
                 <!-- 연락처 -->
                 <TextView
-                    android:id="@+id/mall_guin_txt_9"
+                    android:id="@+id/mall_guin_txt_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="쇼핑몰 스타일"
                     android:textColor="#404040"
                     android:textSize="16dp" />
@@ -280,7 +321,7 @@
 
                     <TextView
                         android:id="@+id/mall_guin_tv_style_0"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -290,7 +331,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_1"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -301,7 +342,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_2"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -312,7 +353,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_3"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -323,7 +364,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_4"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
@@ -343,7 +384,7 @@
 
                     <TextView
                         android:id="@+id/mall_guin_tv_style_5"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -353,7 +394,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_6"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -364,7 +405,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_7"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -375,7 +416,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_8"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_select_category"
@@ -386,7 +427,7 @@
                         android:textSize="11dp" />
                     <TextView
                         android:id="@+id/mall_guin_tv_style_9"
-                        android:onClick="onClick"
+                        android:onClick="onStyleClick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
@@ -403,10 +444,10 @@
 
                 <!-- 주소 -->
                 <TextView
-                    android:id="@+id/mall_guin_txt_10"
+                    android:id="@+id/mall_guin_txt_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="급여"
                     android:textColor="#404040"
                     android:textSize="16dp" />
@@ -418,6 +459,7 @@
                     android:weightSum="5">
                     <TextView
                         android:id="@+id/mall_guin_tv_pay"
+                        android:onClick="onClick"
                         style="@style/edittext_padding"
                         android:layout_width="0dp"
                         android:layout_weight="2"
@@ -434,6 +476,7 @@
                         style="@style/edittext_padding"
                         android:layout_width="0dp"
                         android:layout_weight="3"
+                        android:inputType="number"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/round_rect_edit"

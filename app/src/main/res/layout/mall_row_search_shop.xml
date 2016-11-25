@@ -23,8 +23,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:id="@+id/mall_row_search_shop_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="147dp"
+                android:layout_height="90dp"
                 android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/shop01" />

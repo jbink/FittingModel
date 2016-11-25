@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 유아, 어린이 모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_0"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="유아, 어린이 모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_0"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSubMenuClick"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_0"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:enabled="true"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="유아"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_1"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:onClick="onSubMenuClick"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="초등학생"/>
+    </LinearLayout>
+
+
+    <!-- 청소년 모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_1"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="청소년 모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_1"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_2"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_2"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="중학생"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_3"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_3"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_height="wrap_content"
+            android:text="고등학생"/>
+    </LinearLayout>
+
+
+    <!-- 피팅 모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_2"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="피팅모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_2"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="20대 초반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="20대 중반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="20대 후반"
+                android:textColor="@color/color_7b7b7b" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="30대 초반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="30대 중반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="30대 후반"
+                android:textColor="@color/color_7b7b7b" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 주부, 중년모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_3"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="주부, 중년모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="40대 초반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="40대 중반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="40대 후반"
+                android:textColor="@color/color_7b7b7b" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="50대 초반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="50대 중반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="50대 후반"
+                android:textColor="@color/color_7b7b7b" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="60대 초반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="60대 중반"
+                android:textColor="@color/color_7b7b7b" />
+
+            <ImageButton
+                android:id="@+id/category_model_sub_ibtn_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_category"
+                android:onClick="onSubMenuClick" />
+
+            <TextView
+                android:id="@+id/category_model_sub_txt_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="onSubMenuClick"
+                android:text="60대 후반"
+                android:textColor="@color/color_7b7b7b" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- 부분모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_4"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="부분모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_4"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_19"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_19"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="피부"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_20"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_20"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="손"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_21"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_21"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="발"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_22"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_22"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="헤어"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_23"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_23"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="다리"/>
+    </LinearLayout>
+
+
+    <!-- 외국인 모델 -->
+    <RelativeLayout
+        android:id="@+id/category_model_layout_5"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/edittext_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rect_e1"
+            android:hint="외국인 모델"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/category_model_txt_arrow_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/arrow_bottom" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/category_model_layout_child_5"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_24"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_24"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:text="10대"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_25"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_25"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="20대"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_26"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_26"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="30대"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_27"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_27"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="40대"/>
+        <ImageButton
+            android:id="@+id/category_model_sub_ibtn_28"
+            android:onClick="onSubMenuClick"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_category"/>
+        <TextView
+            android:id="@+id/category_model_sub_txt_28"
+            android:onClick="onSubMenuClick"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_7b7b7b"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="50대"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

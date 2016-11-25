@@ -48,6 +48,8 @@ public class GlobalValues {
 	public final static int LTE_3G = 1;
 	public final static int POPUP_RESULT = 1414;
 	public final static int POPUP_REQUEST = 1515;
+	public final static String MODEL = "model";
+	public final static String MALL = "mall";
 
 
 	static Typeface mFont = null;
