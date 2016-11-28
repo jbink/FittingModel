@@ -22,13 +22,11 @@ import android.widget.TextView;
 
 import jbink.appnapps.fittingmodel.LoginActivity;
 import jbink.appnapps.fittingmodel.R;
-import jbink.appnapps.fittingmodel.mall.ranking.MallRankingFragment;
-import jbink.appnapps.fittingmodel.mall.recommend.MallRecommendFragment;
-import jbink.appnapps.fittingmodel.mall.searchshop.MallSearchFragment;
 import jbink.appnapps.fittingmodel.model.entire.ModelEntireFragment;
 import jbink.appnapps.fittingmodel.model.interest.ModelInterestFragment;
 import jbink.appnapps.fittingmodel.model.ranking.ModelRankingFragment;
 import jbink.appnapps.fittingmodel.model.recommend.ModelRecommendFragment;
+import jbink.appnapps.fittingmodel.model.search.ModelSearchFragment;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
 import jbink.appnapps.fittingmodel.util.SharedPreUtil;
 
@@ -125,9 +123,12 @@ public class ModelMainActivity extends AppCompatActivity implements NavigationVi
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent;
         int id = item.getItemId();
-        if (id == R.id.model_logout) {
+        Intent intent;
+        if(id == R.id.model_apply_list){
+            //쇼핑목 지원리스트트
+        }
+        else if (id == R.id.model_logout) {
             SharedPreUtil.setAutoLogin(mContext, false);
             intent = new Intent(mContext, LoginActivity.class);
             startActivity(intent);
@@ -214,7 +215,7 @@ public class ModelMainActivity extends AppCompatActivity implements NavigationVi
                 newFragment = new ModelRecommendFragment().newInstance();
                 break;
             case 1:
-                newFragment = new MallSearchFragment().newInstance();
+                newFragment = new ModelSearchFragment().newInstance();
                 break;
             case 2:
                 newFragment = new ModelEntireFragment().newInstance();

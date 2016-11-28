@@ -16,5 +16,6 @@ NICE평가정보㈜에 등록되어 있지 않은 기업은 사업자등록증 �
     <string name="pager_txt_0">총작업 &lt;font color=#ff8401>7&lt;/font>건</string>
     <string name="pager_txt_1">모델제시 &lt;font color=#ff8401>23&lt;/font>건</string>
     <string name="pager_txt_2">만족도 &lt;font color=#ff8401>78&lt;/font>%</string>
+    <string name="permission_msg">가입을 위해 핸드폰 번호 사용에 동의하셔야 합니다.</string>
 
 </resources>

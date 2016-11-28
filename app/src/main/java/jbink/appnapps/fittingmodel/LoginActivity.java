@@ -1,5 +1,6 @@
 package jbink.appnapps.fittingmodel;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import jbink.appnapps.fittingmodel.db.DBHelper;
+import java.util.ArrayList;
+
 import jbink.appnapps.fittingmodel.db.MallDBTable;
 import jbink.appnapps.fittingmodel.db.ModelDBTable;
 import jbink.appnapps.fittingmodel.mall.MallMainActivity;
@@ -21,6 +23,8 @@ import jbink.appnapps.fittingmodel.model.ModelSignupActivity;
 import jbink.appnapps.fittingmodel.model.common.ModelCommonData;
 import jbink.appnapps.fittingmodel.util.GlobalValues;
 import jbink.appnapps.fittingmodel.util.SharedPreUtil;
+import jbink.appnapps.mylibrary.PermissionListener;
+import jbink.appnapps.mylibrary.jbinkPermission;
 
 /**
  * Created by user on 2016-11-11.
@@ -37,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mContext = LoginActivity.this;
+
+        new jbinkPermission(mContext)
+                .setPermissionListener(permissionListener)
+                .setRationaleMessage(R.string.permission_msg)
+                .setRationaleConfirmText("확인")
+                .setPermission( Manifest.permission.READ_PHONE_STATE)
+                .check();
+
 
         //앱 처음 실행시 DB 생성
         if(SharedPreUtil.getFirstPlay(mContext) == true){
@@ -92,10 +104,22 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             //이미 로그인을 했고 자동로그인 기능으로 바로 로그인
-            Toast.makeText(mContext, "자동로그인", Toast.LENGTH_SHORT).show();
-            finish();
+//            Toast.makeText(mContext, "자동로그인", Toast.LENGTH_SHORT).show();
+//            finish();
         }
     }
+    
+    PermissionListener permissionListener = new PermissionListener() {
+        @Override
+        public void onPermissionGranted() {
+            Toast.makeText(mContext, "GRATE", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onPermissionDenied(ArrayList<String> arrayList) {
+            Toast.makeText(mContext, "FAIL", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     public void onClick(View v){
         Intent intent;

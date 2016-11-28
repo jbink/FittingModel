@@ -193,7 +193,7 @@ public class SharedPreUtil {
 	 *  default -> true
 	 */
 	static public boolean getAutoLogin(Context ctx) {
-		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_AUTO_LOGIN, true);
+		return ctx.getSharedPreferences(SHARED_PREF_NAME, 0).getBoolean(PREF_AUTO_LOGIN, false);
 	}
 /*************************************************************************************************/
 	//자동로그인이 가능한지 check

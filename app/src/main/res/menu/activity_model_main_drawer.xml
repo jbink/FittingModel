@@ -3,20 +3,16 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/model_apply_list"
+            android:title="쇼핑몰 지원목록" />
+        <item
             android:id="@+id/model_logout"
-            android:icon="@drawable/ic_menu_camera"
             android:title="로그아웃" />
         <item
             android:id="@+id/model_withdraw"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="회원탈퇴" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
     </group>
 
